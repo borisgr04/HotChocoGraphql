@@ -23,6 +23,7 @@ var app = builder.Build();
 var cibContext = app.Services.CreateScope().ServiceProvider.GetRequiredService<CibContext>();
 await DatabaseSeeder.SeedAsync(cibContext);
 
+Injector.Crypt = app.Services.CreateScope().ServiceProvider.GetRequiredService<CryptService>();
 // Configure the HTTP request pipeline.
 
 
