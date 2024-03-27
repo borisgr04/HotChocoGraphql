@@ -23,11 +23,9 @@ namespace GraphApi
        
         public DateTime EstablishmentDate { get; set; }
         public ICollection<CompanyMember> CompanyMembers { get; set; }
-        
-        public string IdNew() => Injector.Crypt.FunctionTest(Id);
 
+        public string IdNew()=>Injector.Crypt.FunctionTest(Id);
         
-
     }
     public class CompanyMember
     {

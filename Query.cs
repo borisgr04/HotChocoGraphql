@@ -1,13 +1,16 @@
 ﻿using ApiGq;
 using GraphApi;
+using HotChocolate.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotG
 {
+    [Authorize]
     public class Query
     {
         public string Hello() => "World";
 
+        
         public Task<List<Book>> GetBooks([Service] Repository repository) =>
          repository.GetBooksAsync();
 
